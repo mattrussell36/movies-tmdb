@@ -1,0 +1,56 @@
+.App {
+  max-width: 560px;
+  margin: 40px auto;
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.App-controls {
+  width: 200px;
+  padding-right: 20px;
+}
+
+.App-main {
+  flex: 1;
+}
+
+.App-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.App-list-item {
+  padding: 10px 20px;
+  background-color: #f0f0f0;
+  margin-bottom: 5px;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.Range-label {
+  display: block;
+}
