@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Card from '../Card/Card';
+import './List.css';
 
 class List extends Component {
     filterByRating(movie) {
@@ -31,25 +33,33 @@ class List extends Component {
         return selectedGenres.every(genreId => movie.genre_ids.includes(genreId));
     }
 
+    sortByPopularity(movieA, movieB) {
+        return movieA.popularity < movieB.popularity ? 1 : -1;
+    }
+
     filterMovies() {
         return this.props.movies
             .filter(movie => this.filterByRating(movie))
             .filter(movie => this.filterByGenre(movie))
-            .filter(movie => this.filterByGenreMatchAll(movie));
+            .filter(movie => this.filterByGenreMatchAll(movie))
+            .sort((movieA, movieB) => this.sortByPopularity(movieA, movieB));
     }
 
     render() {
         const movies = this.filterMovies();
+        
+        if (!movies.length) {
+            return (
+                <div className="List--empty">No movies!</div>
+            )
+        }
 
         return (
-            <ul className="App-list">
+            <ul className="List">
                 {movies.map(movie => (
-                <li 
-                    key={movie.id}
-                    className="App-list-item"
-                >
-                    {movie.original_title} | {movie.vote_average} | {movie.genre_ids.join(', ')}
-                </li>
+                    <li key={movie.id} className="List-item">
+                        <Card {...movie} />
+                    </li>
                 ))}
             </ul>
         );

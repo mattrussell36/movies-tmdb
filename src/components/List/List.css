@@ -1,0 +1,37 @@
+.List {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: stretch;
+    list-style: none;
+    margin: 0;
+    padding: 5px;
+}
+
+.List--empty {
+    padding: 10px;
+    background-color: #fff;
+    margin: 15px;
+}
+
+.List-item {
+    width: 100%;
+    padding: 10px;
+}
+
+@media (min-width: 560px) {
+    .List-item {
+        width: 50%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .List-item {
+        width: 33.333333%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .List-item {
+        width: 25%;
+    }
+}

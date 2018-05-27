@@ -1,8 +1,9 @@
 import React from 'react';
+import './Range.css';
 
 const Range = (props) => (
     <div className="Range">
-        <label className="Range-label" htmlFor={props.name}>{props.label}</label>
+        <label className="Range-label" htmlFor={props.name}>{props.label} <span className="Range-value">({props.value})</span></label>
         <input 
             type="Range" 
             className="Range-input"
@@ -13,7 +14,6 @@ const Range = (props) => (
             min={props.min}
             max={props.max}
         />
-        <span className="Range-value">{props.value}</span>
     </div>
 );
 

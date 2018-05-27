@@ -1,0 +1,16 @@
+.Card {
+    background-color: white;
+    min-height: 100%;
+}
+
+.Card-img {
+    width: 100%;
+}
+
+.Card-body {
+    padding: 15px;
+}
+
+.Card-body > :last-child {
+    margin-bottom: 0;
+}

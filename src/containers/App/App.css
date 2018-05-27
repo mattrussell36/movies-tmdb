@@ -1,0 +1,46 @@
+.App {
+  display: flex;
+  flex-flow: column nowrap;
+  min-height: 100vh;
+}
+
+.App-header {
+  padding: 15px;
+  background-color: #1010E5;
+}
+
+.App-title {
+  margin: 0;
+  color: #fff;
+  font-size: 19px;
+}
+
+.App-wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  flex: 1;
+}
+
+.App-controls {
+  width: 240px;
+  padding: 20px;
+}
+
+.App-main {
+  flex: 1;
+  background-color: #f0f0f0;
+}
+
+.App-error {
+  margin: 15px;
+  margin-bottom: 0;
+  padding: 10px;
+  background: #eb9292;
+}
+
+.App-footer {
+  background-color: #1a1a1a;
+  color: white;
+  padding: 15px;
+}
+
