@@ -24,7 +24,7 @@ const Controls = (props) => (
             />
         </Field>
         {props.genres.map(genre => (
-            <Field>
+            <Field key={genre.id}>
                 <Checkbox
                     key={genre.id}
                     name={genre.name}

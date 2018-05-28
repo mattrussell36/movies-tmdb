@@ -5,10 +5,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 Run with `npm start`.
 
 TODO:
-* Fix 2 vs 4 spaces
+* PropTypes and DefaultProps
 * Tests
 * Get image paths from TMDB configuration endpoint.
 * Make it look nicer
+* Loading state
 
 Notes:
 Filterable by rating is a little ambigiuous as the movies don't have a rating property.
