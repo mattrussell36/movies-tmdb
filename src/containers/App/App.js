@@ -7,7 +7,10 @@ import List from '../../components/List/List';
 class App extends Component {
     constructor() {
         super();
-
+        // Flag to cancel setState operation if the component has
+        // unmounted
+        this.cancelFetch = false;
+        
         this.state = {
             rating: 3,
             matchAll: false,
@@ -46,7 +49,7 @@ class App extends Component {
         });
     }
 
-    componentDidMount() {
+    getMoviesAndGenres() {
         // TODO: Get image paths from the configuration Api
         // TODO: Make request cancelable on unmount
         Promise.all([
@@ -54,6 +57,11 @@ class App extends Component {
             fetch(TMDB_NOW_PLAYING).then(res => res.json()),
         ])
             .then(data => {
+                if (this.cancelFetch) {
+                    return;
+                }
+
+                // Add checked property to each genre
                 const genres = data[0].genres.map(genre => Object.assign(genre, { checked: false }));
                 const movies = data[1].results;
 
@@ -63,10 +71,22 @@ class App extends Component {
                 });
             })
             .catch(err => {
+                if (this.cancelFetch) {
+                    return;
+                }
+                
                 this.setState({
                     error: true,
                 });
             });
+    }
+
+    componentDidMount() {
+        this.getMoviesAndGenres();
+    }
+
+    componentWillUnmount() {
+        this.cancelFetch = true;
     }
 
     render() {

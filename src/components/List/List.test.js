@@ -15,6 +15,7 @@ describe('List.js', () => {
         { id: 3, genre_ids: [ 1, 2 ], vote_average: 8, popularity: 200 },
         { id: 3, genre_ids: [ 3, 4 ], vote_average: 8, popularity: 200 }
     ];
+    const genres = [1, 2, 3, 4];
     const rating = 6;
     const selectedGenres = [1];
 
@@ -25,6 +26,7 @@ describe('List.js', () => {
             selectedGenres={selectedGenres} 
             matchAll={false} 
             movies={movies}
+            genres={genres}
         />, div);
         ReactDOM.unmountComponentAtNode(div);
     });

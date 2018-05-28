@@ -11,9 +11,7 @@ TODO:
 * Make it look nicer
 * Loading state
 
-Notes:
-Filterable by rating is a little ambigiuous as the movies don't have a rating property.
-
-Should we sort by `vote_average` or `popularity`.
-
-Configuration API, not mentioned in the docs
+Notes on task:
+* Filterable by rating is a little ambigiuous as the movies don't have a rating property.
+* Maybe too much to do?
+* Saws to display an image, but the configuration API is not mentioned. Maybe a good thing?

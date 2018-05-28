@@ -28,7 +28,7 @@ const Controls = (props) => (
                 <Checkbox
                     key={genre.id}
                     name={genre.name}
-                    label={`${genre.name} | ${genre.id}`}
+                    label={genre.name}
                     checked={genre.checked}
                     onChange={props.handleGenreChange}
                 />

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Card from '../Card/Card';
 import './List.css';
+import { TMDB_IMG_BASE_URL } from '../../constants';
 
 export function filterByRating(movie, rating) {
     return movie.vote_average >= parseInt(rating, 10);
@@ -46,11 +47,25 @@ class List extends Component {
 
         return (
             <ul className="List">
-                {movies.map(movie => (
-                    <li key={movie.id} className="List-item">
-                        <Card {...movie} />
-                    </li>
-                ))}
+                {movies.map(movie => {
+                    const movieGenres = movie.genre_ids.map(id => {
+                        return this.props.genres.find(genre => id === genre.id).name;
+                    }).join(', ');
+
+                    return (
+                        <li key={movie.id} className="List-item">
+                            <Card 
+                                img={`${TMDB_IMG_BASE_URL}${movie.backdrop_path}`}
+                                imgAlt={movie.original_title}
+                            >
+                                <h3>{movie.original_title}</h3>
+                                <p><strong>Popularity:</strong> {movie.popularity}</p>
+                                <p><strong>Rating:</strong> {movie.vote_average}</p>
+                                <p><strong>Genres:</strong> {movieGenres}</p>
+                            </Card>
+                        </li>
+                    );
+                })}
             </ul>
         );
     }
