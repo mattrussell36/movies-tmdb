@@ -15,7 +15,13 @@ describe('List.js', () => {
         { id: 3, genre_ids: [ 1, 2 ], vote_average: 8, popularity: 200 },
         { id: 3, genre_ids: [ 3, 4 ], vote_average: 8, popularity: 200 }
     ];
-    const genres = [1, 2, 3, 4];
+    const genres = [
+        { id: 1, name: 'foo' }, 
+        { id: 2, name: 'bar' },
+        { id: 3, name: 'quz' },
+        { id: 4, name: 'baz' },
+    ];
+
     const rating = 6;
     const selectedGenres = [1];
 
